@@ -1,0 +1,50 @@
+*********Main.py file layout- Beta***********
+
+Standards:
+	class name- start with capital letter
+	function name- start with 'fn_' eg: fn_updateScore()
+	
+
+class Main_class()
+	
+	intialise the randomised list of questions ids which will be fetched
+	
+	functions:
+		1) fn_show_login([args])
+				render login page
+				boolVar=call fun_verify()
+				if(boolVar==True)
+					fn_show_NextPage()
+					
+		2) fn_verify([args])
+			validate the following:
+				*) none of the field is empty
+				*) phone_no is 10 integers only
+				*) receipt feild 1 and 2 match
+				*) receipt duplicacy-
+						if receipt number already exists in DB check and time remaining for that number is 0
+							return false
+						else
+							fn_store(pass all args above to store in DB)
+							return true
+		3) fn_storeDB([args])
+				fill LoginDB
+			
+				create a list of 50 random unique numbers
+				append the question list in mcqQuestion DB seperated by @
+			
+		4) fn_show_NextPage([args])
+				render mcq page showing first question retrieved from the questionList
+				
+				on submit:
+					checking of answer
+					call fn_score_update()
+					load a new page with updated UI (green/red)
+
+		5) fn_update_score([args])
+				update score according to current round marking scheme
+			
+		6) fn_timer_update([args])
+				*) basic timer code
+				*) if(self.countdown%60==0)
+						update userMcq DB/ userEuler DB
