@@ -1,0 +1,65 @@
+Structure details:-
+
+Round 1:
+	15 mins- ulimited questions
+	10 mins- 
+		(a) Past- reviste the same questions(+4,-4)
+		(b) Present- new set of unlimited ques (+4,-2)
+		(c) Future- Euler ques (+5,0)
+	
+	Database details:
+		login DB:
+			1) Name1
+			2) Name2
+			3) College
+			4) Receipt Number (primary keey)
+			5) Phone Number
+			6) Set selector(senior/junior bool var)
+		
+		UserMcq DB:
+			1) Receipt No (Foreign Key & primary key)
+			2) Question list (String od ques id seperated by @)
+			3) TimePartA (updated every minute; Reset for 10 mininutes in case of Past and present)
+			4) ScorePart_A
+			5) Ans list (String of corresponding options seperated by @)
+		
+		UserEuler DB:
+			1) Receipt (Foreign Key & primary key)
+			2) Question list (String od ques id seperated by @)
+			3) Ans list (String of corresponding options seperated by @)
+			4) Score
+			5) TimePart_B (updated every minute)
+		
+		McqQuestion DB:
+			1) Q_Id (rpimary key)
+			2) Question Text
+			3) option 1
+			4) option 2
+			5) option 3
+			6) optoin 4
+			7) correct option
+		
+		EulerQuestion DB:
+			1) Q_Id (rpimary key)
+			2) Question Text
+			3) Correct answer
+
+		Server DB:
+			1) Id (primary key)
+			2) Receipt number
+			3) Name1
+			4) Name2
+			5) College
+			6) Score_Part_A
+			7) Score_Part_B
+			8) Total score
+			
+		***Work Description***
+		1) All questions have been segregated into four files according to markings and plagiarism has been removed.
+		2) One last re-review has to be done for which a group of questions will be re-reviewed
+		   in teams of 2 removing ambiguity on 1 fixed day.
+		3) Old questions are to be included for senior set.
+		4) That done, 2 seperated DB (one for Juniors and another one for Seniors will be created). Access of questions from these will be 
+			done randomly.
+		5) A test for one by one retrieval ofquestions have to be checked for lag.
+		
